@@ -1,0 +1,10 @@
+{
+  "description": "This mobile app enhances user experiences by integrating augmented reality features, allowing users to interact with digital content in real-world environments.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
