@@ -19,6 +19,8 @@ const C = {
   arGreen:    '#00FF88',
 }
 
+const landmarkImage = (filename: string) => `${import.meta.env.BASE_URL}images/landmarks/${filename}`
+
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const LANDMARKS = [
   {
@@ -28,7 +30,7 @@ const LANDMARKS = [
     walk: "12 min walk",
     year: "Built 1828",
     accessible: true,
-    img: "/images/landmarks/cascade-main.webp",
+    img: landmarkImage("cascade-main.webp"),
     desc: "The Cascade Female Factory stands as one of Australia's most significant convict heritage sites. This sandstone complex housed female convicts and their children during the colonial period, offering a poignant window into the lives of women transported from Britain. The site's austere architecture and preserved yards bear witness to stories of resilience, labour, and survival.",
     category: "Convict Heritage",
   },
@@ -39,7 +41,7 @@ const LANDMARKS = [
     walk: "8 min walk",
     year: "Built 1842",
     accessible: false,
-    img: "/images/landmarks/st-georges-main.webp",
+    img: landmarkImage("st-georges-main.webp"),
     desc: "St George's Church is a fine example of Georgian ecclesiastical architecture in Hobart. Its distinctive sandstone facade and elegant spire have watched over Battery Point for nearly two centuries. The church remains an active place of worship and a treasured landmark of colonial Hobart.",
     category: "Religious Heritage",
   },
@@ -50,7 +52,7 @@ const LANDMARKS = [
     walk: "5 min walk",
     year: "Built 1835–1860",
     accessible: true,
-    img: "/images/landmarks/salamanca-main.webp",
+    img: landmarkImage("salamanca-main.webp"),
     desc: "Salamanca Place's iconic sandstone warehouses once stored goods from the whaling and trading industries. Today this vibrant precinct hosts markets, galleries, and restaurants while preserving its authentic colonial mercantile character.",
     category: "Colonial Commerce",
   },
@@ -61,7 +63,7 @@ const LANDMARKS = [
     walk: "3 min walk",
     year: "Built 1831",
     accessible: false,
-    img: "/images/landmarks/penitentiary-main.webp",
+    img: landmarkImage("penitentiary-main.webp"),
     desc: "The Penitentiary Chapel Historic Site encompasses a complex of sandstone buildings including a chapel, cells, and courts. Underground tunnels connect the structures, creating one of Hobart's most atmospheric heritage experiences.",
     category: "Convict Heritage",
   },
@@ -72,7 +74,7 @@ const LANDMARKS = [
     walk: "10 min walk",
     year: "Built 1836",
     accessible: true,
-    img: "/images/landmarks/narryna-main.webp",
+    img: landmarkImage("narryna-main.webp"),
     desc: "Narryna is one of Australia's oldest and most complete colonial merchant houses. The Georgian sandstone home and its collection of colonial artefacts offer an intimate portrait of prosperous life in early Van Diemen's Land.",
     category: "Colonial Living",
   },
@@ -81,34 +83,34 @@ const LANDMARKS = [
 type GalleryPhoto = { url: string; caption: string; year: string; desc: string }
 const GALLERIES: Record<number, GalleryPhoto[]> = {
   1: [
-    { url: '/images/landmarks/cascade-gallery-1.webp', caption: 'World Heritage Site Entrance', year: 'Present day', desc: 'The entrance to the Cascades Female Factory historic precinct.' },
-    { url: '/images/landmarks/cascade-gallery-2.webp', caption: 'Factory Yard Panorama', year: 'Present day', desc: 'A panoramic view across the surviving sandstone yards.' },
-    { url: '/images/landmarks/cascade-gallery-3.webp', caption: 'Cascades Factory Yard', year: 'Present day', desc: 'Inside one of the preserved yards used by transported women.' },
-    { url: '/images/landmarks/cascade-gallery-4.webp', caption: 'Historic Factory Precinct', year: '1892', desc: 'An archival view of the Cascades Female Factory in the late nineteenth century.' },
+    { url: landmarkImage('cascade-gallery-1.webp'), caption: 'World Heritage Site Entrance', year: 'Present day', desc: 'The entrance to the Cascades Female Factory historic precinct.' },
+    { url: landmarkImage('cascade-gallery-2.webp'), caption: 'Factory Yard Panorama', year: 'Present day', desc: 'A panoramic view across the surviving sandstone yards.' },
+    { url: landmarkImage('cascade-gallery-3.webp'), caption: 'Cascades Factory Yard', year: 'Present day', desc: 'Inside one of the preserved yards used by transported women.' },
+    { url: landmarkImage('cascade-gallery-4.webp'), caption: 'Historic Factory Precinct', year: '1892', desc: 'An archival view of the Cascades Female Factory in the late nineteenth century.' },
   ],
   2: [
-    { url: '/images/landmarks/st-georges-gallery-1.webp', caption: "St George's Church", year: '2013', desc: "The church's distinctive tower and neoclassical sandstone façade in Battery Point." },
-    { url: '/images/landmarks/st-georges-gallery-2.webp', caption: "St George's from Battery Point", year: '2022', desc: 'A modern view of the church within its Battery Point streetscape.' },
-    { url: '/images/landmarks/st-georges-gallery-3.webp', caption: 'Church Steeple', year: '2013', desc: 'The landmark steeple visible above Battery Point.' },
-    { url: '/images/landmarks/st-georges-gallery-4.webp', caption: 'Church and Grounds', year: '2015', desc: "St George's Church and its surrounding historic grounds." },
+    { url: landmarkImage('st-georges-gallery-1.webp'), caption: "St George's Church", year: '2013', desc: "The church's distinctive tower and neoclassical sandstone façade in Battery Point." },
+    { url: landmarkImage('st-georges-gallery-2.webp'), caption: "St George's from Battery Point", year: '2022', desc: 'A modern view of the church within its Battery Point streetscape.' },
+    { url: landmarkImage('st-georges-gallery-3.webp'), caption: 'Church Steeple', year: '2013', desc: 'The landmark steeple visible above Battery Point.' },
+    { url: landmarkImage('st-georges-gallery-4.webp'), caption: 'Church and Grounds', year: '2015', desc: "St George's Church and its surrounding historic grounds." },
   ],
   3: [
-    { url: '/images/landmarks/salamanca-gallery-1.webp', caption: 'Salamanca Place Streetscape', year: '2008', desc: 'The continuous row of convict-built sandstone warehouses.' },
-    { url: '/images/landmarks/salamanca-gallery-2.webp', caption: 'Salamanca Market', year: '2007', desc: 'Market stalls lining the historic Salamanca warehouses.' },
-    { url: '/images/landmarks/salamanca-gallery-3.webp', caption: 'Waterfront Warehouses', year: '2005–2006', desc: 'A panoramic view of Salamanca Place and its restored warehouse façades.' },
-    { url: '/images/landmarks/salamanca-gallery-4.webp', caption: 'Salamanca Precinct', year: '2007', desc: 'The heritage precinct near Hobart waterfront.' },
+    { url: landmarkImage('salamanca-gallery-1.webp'), caption: 'Salamanca Place Streetscape', year: '2008', desc: 'The continuous row of convict-built sandstone warehouses.' },
+    { url: landmarkImage('salamanca-gallery-2.webp'), caption: 'Salamanca Market', year: '2007', desc: 'Market stalls lining the historic Salamanca warehouses.' },
+    { url: landmarkImage('salamanca-gallery-3.webp'), caption: 'Waterfront Warehouses', year: '2005–2006', desc: 'A panoramic view of Salamanca Place and its restored warehouse façades.' },
+    { url: landmarkImage('salamanca-gallery-4.webp'), caption: 'Salamanca Precinct', year: '2007', desc: 'The heritage precinct near Hobart waterfront.' },
   ],
   4: [
-    { url: '/images/landmarks/penitentiary-gallery-1.webp', caption: 'Penitentiary Chapel Exterior', year: '2017', desc: 'An exterior architectural view of the surviving chapel complex.' },
-    { url: '/images/landmarks/penitentiary-gallery-2.webp', caption: 'Old Trinity and Penitentiary', year: 'c.1900', desc: 'An archival view of the Hobart penitentiary precinct.' },
-    { url: '/images/landmarks/penitentiary-gallery-3.webp', caption: 'South Courtyard', year: '2026', desc: 'The south courtyard inside the Hobart Convict Penitentiary site.' },
-    { url: '/images/landmarks/penitentiary-gallery-4.webp', caption: 'Penitentiary Chapel Tower', year: '2017', desc: 'The chapel tower and its historic clock.' },
+    { url: landmarkImage('penitentiary-gallery-1.webp'), caption: 'Penitentiary Chapel Exterior', year: '2017', desc: 'An exterior architectural view of the surviving chapel complex.' },
+    { url: landmarkImage('penitentiary-gallery-2.webp'), caption: 'Old Trinity and Penitentiary', year: 'c.1900', desc: 'An archival view of the Hobart penitentiary precinct.' },
+    { url: landmarkImage('penitentiary-gallery-3.webp'), caption: 'South Courtyard', year: '2026', desc: 'The south courtyard inside the Hobart Convict Penitentiary site.' },
+    { url: landmarkImage('penitentiary-gallery-4.webp'), caption: 'Penitentiary Chapel Tower', year: '2017', desc: 'The chapel tower and its historic clock.' },
   ],
   5: [
-    { url: '/images/landmarks/narryna-gallery-1.webp', caption: "Narryna Merchant's House", year: 'Present day', desc: 'The Georgian sandstone façade and fountain at Narryna.' },
-    { url: '/images/landmarks/narryna-gallery-2.webp', caption: 'Narryna Courtyard', year: '2015', desc: 'The working courtyard used by the household and servants.' },
-    { url: '/images/landmarks/narryna-gallery-3.webp', caption: 'Façade and Fountain', year: 'Present day', desc: "The formal entrance and carriage loop of Narryna Merchant's House." },
-    { url: '/images/landmarks/narryna-gallery-4.webp', caption: 'Sandstone Façade Detail', year: 'Present day', desc: "Architectural detail of Narryna's Georgian façade." },
+    { url: landmarkImage('narryna-gallery-1.webp'), caption: "Narryna Merchant's House", year: 'Present day', desc: 'The Georgian sandstone façade and fountain at Narryna.' },
+    { url: landmarkImage('narryna-gallery-2.webp'), caption: 'Narryna Courtyard', year: '2015', desc: 'The working courtyard used by the household and servants.' },
+    { url: landmarkImage('narryna-gallery-3.webp'), caption: 'Façade and Fountain', year: 'Present day', desc: "The formal entrance and carriage loop of Narryna Merchant's House." },
+    { url: landmarkImage('narryna-gallery-4.webp'), caption: 'Sandstone Façade Detail', year: 'Present day', desc: "Architectural detail of Narryna's Georgian façade." },
   ],
 }
 
@@ -217,7 +219,7 @@ function BottomNav({ active, onNav }: { active: string; onNav: (s: Screen) => vo
 function LandingScreen({ onExplore, onAR }: { onExplore: () => void; onAR: () => void }) {
   return (
     <div style={{ flex: 1, overflow: 'hidden', position: 'relative', background: C.charcoal }}>
-      <img src="/images/landmarks/landing-cascade.webp" alt="Cascade Female Factory" decoding="async" fetchPriority="high" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: .72 }} />
+      <img src={landmarkImage('landing-cascade.webp')} alt="Cascade Female Factory" decoding="async" fetchPriority="high" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: .72 }} />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom,rgba(30,24,17,.18),rgba(30,24,17,.88) 78%)' }} />
       <div style={{ position: 'absolute', inset: '0 0 auto', padding: '24px 22px', color: C.white }}>
         <span style={{ font: '600 11px Inter', letterSpacing: '.14em', textTransform: 'uppercase' }}>Hobart, Tasmania</span>
@@ -998,9 +1000,9 @@ function ARPastScreen({ onBack }: { onBack: () => void }) {
   return (
     <div style={{ flex: 1, position: 'relative', overflow: 'hidden', background: '#0a0a0a' }}>
       {/* Modern photo */}
-      <img src="/images/landmarks/cascade-ar-today-alt.webp" alt="Cascades Female Factory today" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+      <img src={landmarkImage('cascade-ar-today-alt.webp')} alt="Cascades Female Factory today" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
       {/* Genuine historic depiction of the same Cascades Female Factory site. */}
-      <img src="/images/landmarks/cascade-ar-1844.webp" alt="Cascades Female Factory in 1844" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: (100 - sliderVal) / 100 }} />
+      <img src={landmarkImage('cascade-ar-1844.webp')} alt="Cascades Female Factory in 1844" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: (100 - sliderVal) / 100 }} />
 
       {/* Era badge */}
       <div style={{ position: 'absolute', top: 14, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 6 }}>
@@ -1107,7 +1109,7 @@ function ARNavScreen({ onBack, onNav }: { onBack: () => void; onNav: (s: Screen)
 
   return (
     <div style={{ flex: 1, position: 'relative', overflow: 'hidden', background: '#0a0a0a' }}>
-      <img src="/images/landmarks/hobart-ar-navigation.webp" alt="Battery Point street in Hobart" fetchPriority="high" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }} />
+      <img src={landmarkImage('hobart-ar-navigation.webp')} alt="Battery Point street in Hobart" fetchPriority="high" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }} />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom,rgba(0,0,0,.28),rgba(0,0,0,.03) 55%,rgba(0,0,0,.35))' }} />
 
       {/* Road/path overlay simulation */}
