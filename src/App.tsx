@@ -28,7 +28,7 @@ const LANDMARKS = [
     walk: "12 min walk",
     year: "Built 1828",
     accessible: true,
-    img: "https://images.unsplash.com/photo-1679222507129-23dc863cbf82?w=600&h=400&fit=crop&auto=format",
+    img: "/images/landmarks/cascade-main.webp",
     desc: "The Cascade Female Factory stands as one of Australia's most significant convict heritage sites. This sandstone complex housed female convicts and their children during the colonial period, offering a poignant window into the lives of women transported from Britain. The site's austere architecture and preserved yards bear witness to stories of resilience, labour, and survival.",
     category: "Convict Heritage",
   },
@@ -39,7 +39,7 @@ const LANDMARKS = [
     walk: "8 min walk",
     year: "Built 1842",
     accessible: false,
-    img: "https://images.unsplash.com/photo-1704495779355-b3a29ce86e78?w=600&h=400&fit=crop&auto=format",
+    img: "/images/landmarks/st-georges-main.webp",
     desc: "St George's Church is a fine example of Georgian ecclesiastical architecture in Hobart. Its distinctive sandstone facade and elegant spire have watched over Battery Point for nearly two centuries. The church remains an active place of worship and a treasured landmark of colonial Hobart.",
     category: "Religious Heritage",
   },
@@ -50,7 +50,7 @@ const LANDMARKS = [
     walk: "5 min walk",
     year: "Built 1835–1860",
     accessible: true,
-    img: "https://images.unsplash.com/photo-1763767457338-6c64bfed80b2?w=600&h=400&fit=crop&auto=format",
+    img: "/images/landmarks/salamanca-main.webp",
     desc: "Salamanca Place's iconic sandstone warehouses once stored goods from the whaling and trading industries. Today this vibrant precinct hosts markets, galleries, and restaurants while preserving its authentic colonial mercantile character.",
     category: "Colonial Commerce",
   },
@@ -61,7 +61,7 @@ const LANDMARKS = [
     walk: "3 min walk",
     year: "Built 1831",
     accessible: false,
-    img: "https://images.unsplash.com/photo-1618354901403-5cf19d375a88?w=600&h=400&fit=crop&auto=format",
+    img: "/images/landmarks/penitentiary-main.webp",
     desc: "The Penitentiary Chapel Historic Site encompasses a complex of sandstone buildings including a chapel, cells, and courts. Underground tunnels connect the structures, creating one of Hobart's most atmospheric heritage experiences.",
     category: "Convict Heritage",
   },
@@ -72,20 +72,48 @@ const LANDMARKS = [
     walk: "10 min walk",
     year: "Built 1836",
     accessible: true,
-    img: "https://images.unsplash.com/photo-1763767458644-090bc283e496?w=600&h=400&fit=crop&auto=format",
+    img: "/images/landmarks/narryna-main.webp",
     desc: "Narryna is one of Australia's oldest and most complete colonial merchant houses. The Georgian sandstone home and its collection of colonial artefacts offer an intimate portrait of prosperous life in early Van Diemen's Land.",
     category: "Colonial Living",
   },
 ]
 
-const GALLERY_IMGS = [
-  { url: "https://images.unsplash.com/photo-1679222507129-23dc863cbf82?w=800&h=600&fit=crop&auto=format", caption: "Cascade Female Factory", year: "2024", desc: "The main yard where convict women worked daily under strict colonial supervision." },
-  { url: "https://images.unsplash.com/photo-1704495405480-9129008ff7cd?w=800&h=600&fit=crop&auto=format", caption: "Stone Tower Gateway", year: "1895 (restored)", desc: "Original gatehouse stones, quarried locally by convict labour in the 1820s." },
-  { url: "https://images.unsplash.com/photo-1763767457338-6c64bfed80b2?w=800&h=600&fit=crop&auto=format", caption: "Sandstone Arches", year: "c.1840", desc: "Characteristic colonial sandstone construction visible throughout the precinct." },
-  { url: "https://images.unsplash.com/photo-1766030696082-b6e75ae63c8c?w=800&h=600&fit=crop&auto=format", caption: "Heritage Dome & Cupola", year: "c.1860", desc: "Civic architecture reflecting Hobart's ambitions as a prosperous colonial capital." },
-]
+type GalleryPhoto = { url: string; caption: string; year: string; desc: string }
+const GALLERIES: Record<number, GalleryPhoto[]> = {
+  1: [
+    { url: '/images/landmarks/cascade-gallery-1.webp', caption: 'World Heritage Site Entrance', year: 'Present day', desc: 'The entrance to the Cascades Female Factory historic precinct.' },
+    { url: '/images/landmarks/cascade-gallery-2.webp', caption: 'Factory Yard Panorama', year: 'Present day', desc: 'A panoramic view across the surviving sandstone yards.' },
+    { url: '/images/landmarks/cascade-gallery-3.webp', caption: 'Cascades Factory Yard', year: 'Present day', desc: 'Inside one of the preserved yards used by transported women.' },
+    { url: '/images/landmarks/cascade-gallery-4.webp', caption: 'Historic Factory Precinct', year: '1892', desc: 'An archival view of the Cascades Female Factory in the late nineteenth century.' },
+  ],
+  2: [
+    { url: '/images/landmarks/st-georges-gallery-1.webp', caption: "St George's Church", year: '2013', desc: "The church's distinctive tower and neoclassical sandstone façade in Battery Point." },
+    { url: '/images/landmarks/st-georges-gallery-2.webp', caption: "St George's from Battery Point", year: '2022', desc: 'A modern view of the church within its Battery Point streetscape.' },
+    { url: '/images/landmarks/st-georges-gallery-3.webp', caption: 'Church Steeple', year: '2013', desc: 'The landmark steeple visible above Battery Point.' },
+    { url: '/images/landmarks/st-georges-gallery-4.webp', caption: 'Church and Grounds', year: '2015', desc: "St George's Church and its surrounding historic grounds." },
+  ],
+  3: [
+    { url: '/images/landmarks/salamanca-gallery-1.webp', caption: 'Salamanca Place Streetscape', year: '2008', desc: 'The continuous row of convict-built sandstone warehouses.' },
+    { url: '/images/landmarks/salamanca-gallery-2.webp', caption: 'Salamanca Market', year: '2007', desc: 'Market stalls lining the historic Salamanca warehouses.' },
+    { url: '/images/landmarks/salamanca-gallery-3.webp', caption: 'Waterfront Warehouses', year: '2005–2006', desc: 'A panoramic view of Salamanca Place and its restored warehouse façades.' },
+    { url: '/images/landmarks/salamanca-gallery-4.webp', caption: 'Salamanca Precinct', year: '2007', desc: 'The heritage precinct near Hobart waterfront.' },
+  ],
+  4: [
+    { url: '/images/landmarks/penitentiary-gallery-1.webp', caption: 'Penitentiary Chapel Exterior', year: '2017', desc: 'An exterior architectural view of the surviving chapel complex.' },
+    { url: '/images/landmarks/penitentiary-gallery-2.webp', caption: 'Old Trinity and Penitentiary', year: 'c.1900', desc: 'An archival view of the Hobart penitentiary precinct.' },
+    { url: '/images/landmarks/penitentiary-gallery-3.webp', caption: 'South Courtyard', year: '2026', desc: 'The south courtyard inside the Hobart Convict Penitentiary site.' },
+    { url: '/images/landmarks/penitentiary-gallery-4.webp', caption: 'Penitentiary Chapel Tower', year: '2017', desc: 'The chapel tower and its historic clock.' },
+  ],
+  5: [
+    { url: '/images/landmarks/narryna-gallery-1.webp', caption: "Narryna Merchant's House", year: 'Present day', desc: 'The Georgian sandstone façade and fountain at Narryna.' },
+    { url: '/images/landmarks/narryna-gallery-2.webp', caption: 'Narryna Courtyard', year: '2015', desc: 'The working courtyard used by the household and servants.' },
+    { url: '/images/landmarks/narryna-gallery-3.webp', caption: 'Façade and Fountain', year: 'Present day', desc: "The formal entrance and carriage loop of Narryna Merchant's House." },
+    { url: '/images/landmarks/narryna-gallery-4.webp', caption: 'Sandstone Façade Detail', year: 'Present day', desc: "Architectural detail of Narryna's Georgian façade." },
+  ],
+}
 
 type Screen =
+  | 'landing'
   | 'home'
   | 'map'
   | 'heritage'
@@ -137,6 +165,13 @@ function IconWeather() {
     </svg>
   )
 }
+function IconHome() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 11.5L12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M9.5 20v-6h5v6"/>
+    </svg>
+  )
+}
 function IconChevronLeft() {
   return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6"/></svg>
 }
@@ -155,9 +190,10 @@ function IconVolume({ muted = false }: { muted?: boolean }) {
 // ─── Bottom Navigation ────────────────────────────────────────────────────────
 function BottomNav({ active, onNav }: { active: string; onNav: (s: Screen) => void }) {
   const tabs = [
+    { id: 'landing' as Screen, label: 'Home', icon: <IconHome /> },
     { id: 'home'    as Screen, label: 'Explore', icon: <IconDiscover /> },
     { id: 'map'     as Screen, label: 'Map', icon: <IconMap /> },
-    { id: 'weather' as Screen, label: 'Weather', icon: <IconWeather /> },
+    { id: 'ar-camera' as Screen, label: 'AR Mode', icon: <IconAR /> },
   ]
   return (
     <div style={{ background: C.white, borderTop: `1px solid ${C.sand}`, padding: '8px 0 12px', display: 'flex', justifyContent: 'space-around' }}>
@@ -177,6 +213,26 @@ function BottomNav({ active, onNav }: { active: string; onNav: (s: Screen) => vo
   )
 }
 
+// ─── Screen: Landing ─────────────────────────────────────────────────────────
+function LandingScreen({ onExplore, onAR }: { onExplore: () => void; onAR: () => void }) {
+  return (
+    <div style={{ flex: 1, overflow: 'hidden', position: 'relative', background: C.charcoal }}>
+      <img src="/images/landmarks/landing-cascade.webp" alt="Cascade Female Factory" decoding="async" fetchPriority="high" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: .72 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom,rgba(30,24,17,.18),rgba(30,24,17,.88) 78%)' }} />
+      <div style={{ position: 'absolute', inset: '0 0 auto', padding: '24px 22px', color: C.white }}>
+        <span style={{ font: '600 11px Inter', letterSpacing: '.14em', textTransform: 'uppercase' }}>Hobart, Tasmania</span>
+      </div>
+      <div style={{ position: 'absolute', left: 22, right: 22, bottom: 34, color: C.white }}>
+        <p style={{ margin: '0 0 8px', color: C.sand, font: '600 12px Inter', letterSpacing: '.08em' }}>WALK THROUGH HISTORY</p>
+        <h1 style={{ margin: 0, font: '700 34px/1.05 Lora, serif' }}>Hobart Heritage Guide</h1>
+        <p style={{ margin: '14px 0 22px', font: '14px/1.55 Inter', color: '#f5efe6' }}>Discover historic places, follow walking routes, and reveal the past through augmented reality.</p>
+        <button onClick={onExplore} style={{ width: '100%', border: 0, borderRadius: 13, padding: 14, background: C.burgundy, color: C.white, font: '700 14px Inter', cursor: 'pointer' }}>Explore Heritage</button>
+        <button onClick={onAR} style={{ width: '100%', marginTop: 10, borderRadius: 13, padding: 13, background: 'rgba(255,255,255,.12)', border: '1px solid rgba(255,255,255,.7)', color: C.white, font: '700 14px Inter', cursor: 'pointer' }}>Open AR Mode</button>
+      </div>
+    </div>
+  )
+}
+
 // ─── Screen: Home ─────────────────────────────────────────────────────────────
 function HomeScreen({ onNav, onLandmark, likes = { 1: 248, 2: 196, 3: 181, 4: 143, 5: 126 } }: { onNav: (s: Screen) => void; onLandmark: (id: number) => void; likes?: Record<number, number> }) {
   const [carouselIdx, setCarouselIdx] = useState(0)
@@ -184,6 +240,8 @@ function HomeScreen({ onNav, onLandmark, likes = { 1: 248, 2: 196, 3: 181, 4: 14
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const carouselRef = useRef<HTMLDivElement>(null)
+  const filterRef = useRef<HTMLDivElement>(null)
+  const filterDrag = useRef({ active: false, startX: 0, startScroll: 0 })
   const dragState = useRef({ active: false, startX: 0, startScroll: 0, moved: false })
   const filters = ['All', 'Convict', 'Religious', 'Colonial', 'Waterfront']
   const filteredLandmarks = LANDMARKS.filter(l => activeFilter === 'All' || `${l.category} ${l.area}`.toLowerCase().includes(activeFilter.toLowerCase()))
@@ -250,7 +308,12 @@ function HomeScreen({ onNav, onLandmark, likes = { 1: 248, 2: 196, 3: 181, 4: 14
         </div>}
 
         {/* Filter chips */}
-        <div style={{ display: 'flex', gap: 8, overflowX: 'auto', padding: '12px 0 14px' }}>
+        <div ref={filterRef}
+          onWheel={e => { if (filterRef.current) filterRef.current.scrollLeft += e.deltaY || e.deltaX }}
+          onPointerDown={e => { filterDrag.current = { active: true, startX: e.clientX, startScroll: filterRef.current?.scrollLeft || 0 } }}
+          onPointerMove={e => { if (filterDrag.current.active && filterRef.current) filterRef.current.scrollLeft = filterDrag.current.startScroll - (e.clientX - filterDrag.current.startX) }}
+          onPointerUp={() => { filterDrag.current.active = false }} onPointerCancel={() => { filterDrag.current.active = false }}
+          style={{ display: 'flex', gap: 8, overflowX: 'auto', padding: '12px 0 14px', touchAction: 'pan-x', cursor: 'grab', scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}>
           {filters.map(f => (
             <button key={f} onClick={() => setActiveFilter(f)}
               style={{ flexShrink: 0, padding: '5px 14px', borderRadius: 20, border: `1.5px solid ${activeFilter === f ? C.burgundy : C.sand}`,
@@ -285,7 +348,7 @@ function HomeScreen({ onNav, onLandmark, likes = { 1: 248, 2: 196, 3: 181, 4: 14
               <div key={lm.id} onClick={() => { if (!dragState.current.moved) onLandmark(lm.id) }}
                 style={{ flexShrink: 0, width: '82%', scrollSnapAlign: 'center', borderRadius: 14, overflow: 'hidden', cursor: 'grab', boxShadow: '0 2px 12px rgba(44,36,23,0.12)', border: `1px solid ${C.sand}` }}>
                 <div style={{ position: 'relative', height: 160 }}>
-                  <img src={lm.img} alt={lm.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={lm.img} alt={lm.name} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(44,36,23,0.75) 0%, transparent 55%)' }} />
                   <div style={{ position: 'absolute', bottom: 12, left: 14, right: 14 }}>
                     <div style={{ background: C.burgundy, color: C.white, fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 10, display: 'inline-block', marginBottom: 5, fontFamily: 'Inter' }}>{lm.category}</div>
@@ -329,7 +392,7 @@ function HomeScreen({ onNav, onLandmark, likes = { 1: 248, 2: 196, 3: 181, 4: 14
             <div key={lm.id} onClick={() => onLandmark(lm.id)}
               style={{ borderRadius: 12, overflow: 'hidden', cursor: 'pointer', boxShadow: '0 1px 8px rgba(44,36,23,0.10)', border: `1px solid ${C.sand}`, background: C.white }}>
               <div style={{ height: 100, overflow: 'hidden', position: 'relative' }}>
-                <img src={lm.img} alt={lm.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={lm.img} alt={lm.name} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={{ position: 'absolute', top: 6, right: 6, background: C.burgundy, color: C.white, borderRadius: 12, padding: '3px 7px', font: '700 10px Inter' }}>♥ {likes[lm.id]}</div>
               </div>
               <div style={{ padding: '8px 10px 10px' }}>
@@ -479,12 +542,13 @@ function MapScreen({ onNav, onLandmark }: { onNav: (s: Screen) => void; onLandma
       </div>
 
       {/* Bottom sheet */}
-      {selectedPin !== null ? (
+      {/* Use one consistent landmark-detail sheet before and after a map pin is selected. */}
+      {true ? (
         <div style={{ background: C.white, borderRadius: '20px 20px 0 0', boxShadow: '0 -4px 20px rgba(44,36,23,0.12)', padding: '14px 20px 20px' }}>
           <div onClick={() => setDetailExpanded(v => !v)} title={detailExpanded ? 'Collapse details' : 'Expand details'} style={{ width: 58, height: 8, background: C.sandDark, borderRadius: 5, margin: '0 auto 14px', cursor: 'pointer' }} />
           {!detailExpanded ? <button onClick={() => setDetailExpanded(true)} style={{ width: '100%', border: 0, background: 'transparent', padding: '2px 0 4px', textAlign: 'left', cursor: 'pointer' }}><strong style={{ font: '700 13px Lora', color: C.charcoal }}>{lm.name}</strong><span style={{ float: 'right', color: C.stone, font: '11px Inter' }}>Expand details⌃</span></button> : <>
           <div style={{ display: 'flex', gap: 12 }}>
-            <img src={lm.img} alt={lm.name} style={{ width: 72, height: 72, borderRadius: 10, objectFit: 'cover', flexShrink: 0 }} />
+            <img src={lm.img} alt={lm.name} loading="lazy" decoding="async" style={{ width: 72, height: 72, borderRadius: 10, objectFit: 'cover', flexShrink: 0 }} />
             <div style={{ flex: 1 }}>
               <h3 style={{ margin: 0, fontSize: 14, fontWeight: 700, color: C.charcoal, fontFamily: 'Lora, serif' }}>{lm.name}</h3>
               <p style={{ margin: '4px 0 0', fontSize: 11, color: C.stone, fontFamily: 'Inter' }}>{lm.area} • {lm.walk}</p>
@@ -546,11 +610,12 @@ function MapScreen({ onNav, onLandmark }: { onNav: (s: Screen) => void; onLandma
 // ─── Screen: Heritage Details ─────────────────────────────────────────────────
 function HeritageScreen({ landmark, onBack, onNav, liked, likeCount, onToggleLike }: { landmark: typeof LANDMARKS[0]; onBack: () => void; onNav: (s: Screen) => void; liked: boolean; likeCount: number; onToggleLike: () => void }) {
   const [galleryIdx, setGalleryIdx] = useState(0)
+  const gallery = GALLERIES[landmark.id]
   return (
     <div style={{ flex: 1, overflowY: 'auto', background: C.cream }}>
       {/* Hero image */}
       <div style={{ position: 'relative', height: 240 }}>
-        <img src={landmark.img} alt={landmark.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <img src={landmark.img} alt={landmark.name} decoding="async" fetchPriority="high" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(44,36,23,0.35) 0%, transparent 40%, rgba(44,36,23,0.4) 100%)' }} />
         <button onClick={onBack}
           style={{ position: 'absolute', top: 14, left: 14, width: 36, height: 36, borderRadius: 10, background: 'rgba(255,255,255,0.9)', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.charcoal }}>
@@ -594,10 +659,10 @@ function HeritageScreen({ landmark, onBack, onNav, liked, likeCount, onToggleLik
       <div style={{ padding: '0 20px 24px' }}>
         <h2 style={{ margin: '0 0 12px', fontSize: 14, fontWeight: 700, color: C.charcoal, fontFamily: 'Lora, serif' }}>Gallery</h2>
         <div style={{ display: 'flex', gap: 10, overflowX: 'auto' }}>
-          {GALLERY_IMGS.map((img, i) => (
+          {gallery.map((img, i) => (
             <div key={i} onClick={() => { setGalleryIdx(i); onNav('gallery'); }}
               style={{ flexShrink: 0, width: 90, height: 90, borderRadius: 10, overflow: 'hidden', cursor: 'pointer', border: `2px solid ${galleryIdx === i ? C.burgundy : 'transparent'}` }}>
-              <img src={img.url} alt={img.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={img.url} alt={img.caption} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           ))}
         </div>
@@ -607,11 +672,12 @@ function HeritageScreen({ landmark, onBack, onNav, liked, likeCount, onToggleLik
 }
 
 // ─── Screen: Gallery ──────────────────────────────────────────────────────────
-function GalleryScreen({ onBack }: { onBack: () => void }) {
+function GalleryScreen({ onBack, landmarkId }: { onBack: () => void; landmarkId: number }) {
   const [idx, setIdx] = useState(0)
   const [showCompare, setShowCompare] = useState(false)
   const [compareSlider, setCompareSlider] = useState(50)
-  const img = GALLERY_IMGS[idx]
+  const gallery = GALLERIES[landmarkId]
+  const img = gallery[idx]
 
   return (
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', background: '#1a1612', overflow: 'hidden' }}>
@@ -627,9 +693,9 @@ function GalleryScreen({ onBack }: { onBack: () => void }) {
       <div style={{ position: 'relative', flex: 1, overflow: 'hidden', margin: '0 16px', borderRadius: 14 }}>
         {showCompare ? (
           <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-            <img src={GALLERY_IMGS[0].url} alt="Historic" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={gallery[0].url} alt="Historic" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', width: `${compareSlider}%` }}>
-              <img src={GALLERY_IMGS[2].url} alt="Modern" style={{ width: `${100 / (compareSlider / 100)}%`, height: '100%', objectFit: 'cover' }} />
+              <img src={gallery[2].url} alt="Modern" style={{ width: `${100 / (compareSlider / 100)}%`, height: '100%', objectFit: 'cover' }} />
             </div>
             <div style={{ position: 'absolute', top: 0, bottom: 0, left: `${compareSlider}%`, width: 2, background: C.white, transform: 'translateX(-50%)' }}>
               <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 32, height: 32, borderRadius: '50%', background: C.white, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.4)' }}>
@@ -638,8 +704,8 @@ function GalleryScreen({ onBack }: { onBack: () => void }) {
             </div>
             <input type="range" min="5" max="95" value={compareSlider} onChange={e => setCompareSlider(+e.target.value)}
               style={{ position: 'absolute', bottom: 20, left: '10%', right: '10%', width: '80%', opacity: 0.8, cursor: 'pointer' }} />
-            <div style={{ position: 'absolute', top: 12, left: 12, background: 'rgba(0,0,0,0.6)', color: C.white, fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 6, fontFamily: 'Inter' }}>TODAY</div>
-            <div style={{ position: 'absolute', top: 12, right: 12, background: 'rgba(125,48,69,0.8)', color: C.white, fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 6, fontFamily: 'Inter' }}>1850</div>
+            <div style={{ position: 'absolute', top: 12, left: 12, background: 'rgba(0,0,0,0.6)', color: C.white, fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 6, fontFamily: 'Inter' }}>VIEW 1</div>
+            <div style={{ position: 'absolute', top: 12, right: 12, background: 'rgba(125,48,69,0.8)', color: C.white, fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 6, fontFamily: 'Inter' }}>VIEW 2</div>
           </div>
         ) : (
           <>
@@ -655,10 +721,10 @@ function GalleryScreen({ onBack }: { onBack: () => void }) {
 
       {/* Thumbnail strip */}
       <div style={{ display: 'flex', gap: 8, padding: '12px 16px 16px', overflowX: 'auto' }}>
-        {GALLERY_IMGS.map((g, i) => (
+        {gallery.map((g, i) => (
           <div key={i} onClick={() => setIdx(i)}
             style={{ flexShrink: 0, width: 62, height: 62, borderRadius: 8, overflow: 'hidden', cursor: 'pointer', border: `2.5px solid ${i === idx ? C.burgundy : 'transparent'}` }}>
-            <img src={g.url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={g.url} alt="" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         ))}
       </div>
@@ -796,7 +862,7 @@ function ARIntroScreen({ onBack, onStart }: { onBack: () => void; onStart: () =>
             style={{ padding: '15px', borderRadius: 14, background: C.arBlue, border: 'none', cursor: 'pointer', fontSize: 15, fontWeight: 700, color: C.charcoal, fontFamily: 'Inter', boxShadow: `0 4px 20px ${C.arBlue}50` }}>
             ⬡ Scan This Building
           </button>
-          <div style={{ padding: '12px 14px', borderRadius: 12, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)' }}><strong style={{ color: C.white, font: '600 12px Inter' }}>What does “1850” mean?</strong><p style={{ margin: '5px 0 0', color: 'rgba(255,255,255,.65)', font: '11px/1.55 Inter' }}>After scanning, “Compare with 1850” overlays a historical reconstruction so you can compare how this same building looked then and today.</p></div>
+          <div style={{ padding: '12px 14px', borderRadius: 12, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)' }}><strong style={{ color: C.white, font: '600 12px Inter' }}>What does “1844” mean?</strong><p style={{ margin: '5px 0 0', color: 'rgba(255,255,255,.65)', font: '11px/1.55 Inter' }}>After scanning, “Compare with 1844” overlays a genuine historical depiction of this same heritage site for comparison with today.</p></div>
         </div>
 
         {/* Feature pills */}
@@ -909,7 +975,7 @@ function ARCameraScreen({ onExit, onPast }: { onExit: () => void; onPast: () => 
           </div>
           {activeBubble === 'info' && <p style={{ margin: 0, fontSize: 11, color: 'rgba(255,255,255,.78)', fontFamily: 'Inter', lineHeight: 1.55 }}>Built in 1828, this sandstone site preserves the stories of transported women and their children.</p>}
           {activeBubble === 'audio' && <><button onClick={() => setAudioPlaying(v => !v)} style={{ padding: '7px 12px', borderRadius: 8, border: 0, background: C.arGreen, fontWeight: 800 }}>{audioPlaying ? 'Stop narration' : 'Play narration'}</button><button onClick={() => setSubtitles(v => !v)} style={{ marginLeft: 8, padding: '7px 10px', borderRadius: 8, border: '1px solid #fff5', background: 'transparent', color: C.white }}>CC {subtitles ? 'On' : 'Off'}</button>{subtitles && <p style={{ margin: '9px 0 0', fontSize: 11, color: C.white, lineHeight: 1.45 }}>“These walls preserve stories of resilience, labour and survival.”</p>}</>}
-          {activeBubble === 'video' && <><div ref={photoTrackRef} onPointerDown={e => { photoDrag.current = { active: true, x: e.clientX, scroll: photoTrackRef.current?.scrollLeft || 0 }; e.currentTarget.setPointerCapture(e.pointerId) }} onPointerMove={e => { if (photoDrag.current.active && photoTrackRef.current) photoTrackRef.current.scrollLeft = photoDrag.current.scroll - (e.clientX - photoDrag.current.x) }} onPointerUp={e => { photoDrag.current.active = false; e.currentTarget.releasePointerCapture(e.pointerId) }} onPointerCancel={() => { photoDrag.current.active = false }} style={{ display: 'flex', gap: 8, overflowX: 'auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', paddingBottom: 5, cursor: 'grab', userSelect: 'none', touchAction: 'pan-y' }}>{GALLERY_IMGS.map((photo,i) => <div key={photo.url} style={{ minWidth: '72%', scrollSnapAlign: 'center', pointerEvents: 'none' }}><img draggable={false} src={photo.url} alt={photo.caption} style={{ width: '100%', height: 92, borderRadius: 9, objectFit: 'cover' }}/><p style={{ margin: '4px 0 0', color: C.white, font: '10px Inter' }}>{i + 1}/{GALLERY_IMGS.length} · {photo.caption}</p></div>)}</div><p style={{ margin: '5px 0 0', fontSize: 10, color: 'rgba(255,255,255,.65)' }}>Drag or swipe left and right to browse photos.</p></>}
+          {activeBubble === 'video' && <><div ref={photoTrackRef} onPointerDown={e => { photoDrag.current = { active: true, x: e.clientX, scroll: photoTrackRef.current?.scrollLeft || 0 }; e.currentTarget.setPointerCapture(e.pointerId) }} onPointerMove={e => { if (photoDrag.current.active && photoTrackRef.current) photoTrackRef.current.scrollLeft = photoDrag.current.scroll - (e.clientX - photoDrag.current.x) }} onPointerUp={e => { photoDrag.current.active = false; e.currentTarget.releasePointerCapture(e.pointerId) }} onPointerCancel={() => { photoDrag.current.active = false }} style={{ display: 'flex', gap: 8, overflowX: 'auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', paddingBottom: 5, cursor: 'grab', userSelect: 'none', touchAction: 'pan-y' }}>{GALLERIES[1].map((photo,i) => <div key={photo.url} style={{ minWidth: '72%', scrollSnapAlign: 'center', pointerEvents: 'none' }}><img draggable={false} src={photo.url} alt={photo.caption} style={{ width: '100%', height: 92, borderRadius: 9, objectFit: 'cover' }}/><p style={{ margin: '4px 0 0', color: C.white, font: '10px Inter' }}>{i + 1}/{GALLERIES[1].length} · {photo.caption}</p></div>)}</div><p style={{ margin: '5px 0 0', fontSize: 10, color: 'rgba(255,255,255,.65)' }}>Drag or swipe left and right to browse photos.</p></>}
         </div>
       )}
 
@@ -917,7 +983,7 @@ function ARCameraScreen({ onExit, onPast }: { onExit: () => void; onPast: () => 
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(10px)', padding: '12px 14px 18px', display: 'flex', gap: 8, zIndex: 5 }}>
         <button onClick={onPast}
           style={{ flex: 1, padding: '11px', borderRadius: 12, background: 'rgba(255,255,255,0.1)', border: `1px solid ${C.arBlue}50`, color: C.arBlue, fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter' }}>
-          ◐ Compare Today with 1850
+          ◐ Compare Today with 1844
         </button>
       </div>
     </div>
@@ -926,21 +992,20 @@ function ARCameraScreen({ onExit, onPast }: { onExit: () => void; onPast: () => 
 
 // ─── Screen: AR Past (See the Past) ──────────────────────────────────────────
 function ARPastScreen({ onBack }: { onBack: () => void }) {
-  const [era, setEra] = useState<'today' | '1850'>('today')
+  const [era, setEra] = useState<'today' | '1844'>('today')
   const [sliderVal, setSliderVal] = useState(100)
 
   return (
     <div style={{ flex: 1, position: 'relative', overflow: 'hidden', background: '#0a0a0a' }}>
       {/* Modern photo */}
-      <img src={LANDMARKS[0].img} alt="Today" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-      {/* Historic sepia overlay */}
-      <div style={{ position: 'absolute', inset: 0, background: `rgba(101,67,33,${(100 - sliderVal) / 100 * 0.8})`, backgroundBlendMode: 'multiply' }} />
-      <img src={LANDMARKS[3].img} alt="1850" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: (100 - sliderVal) / 100, filter: 'sepia(80%) contrast(1.1)' }} />
+      <img src="/images/landmarks/cascade-ar-today-alt.webp" alt="Cascades Female Factory today" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+      {/* Genuine historic depiction of the same Cascades Female Factory site. */}
+      <img src="/images/landmarks/cascade-ar-1844.webp" alt="Cascades Female Factory in 1844" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: (100 - sliderVal) / 100 }} />
 
       {/* Era badge */}
       <div style={{ position: 'absolute', top: 14, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 6 }}>
         <div style={{ padding: '5px 14px', borderRadius: 20, background: sliderVal > 50 ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.3)', color: sliderVal > 50 ? C.charcoal : C.white, fontSize: 11, fontWeight: 700, fontFamily: 'Inter', transition: 'all 0.3s' }}>TODAY</div>
-        <div style={{ padding: '5px 14px', borderRadius: 20, background: sliderVal <= 50 ? C.burgundy : 'rgba(125,48,69,0.4)', color: C.white, fontSize: 11, fontWeight: 700, fontFamily: 'Inter', transition: 'all 0.3s' }}>1850</div>
+        <div style={{ padding: '5px 14px', borderRadius: 20, background: sliderVal <= 50 ? C.burgundy : 'rgba(125,48,69,0.4)', color: C.white, fontSize: 11, fontWeight: 700, fontFamily: 'Inter', transition: 'all 0.3s' }}>1844</div>
       </div>
 
       {/* Top controls */}
@@ -951,8 +1016,8 @@ function ARPastScreen({ onBack }: { onBack: () => void }) {
       {/* Info overlay */}
       {sliderVal < 60 && (
         <div style={{ position: 'absolute', top: 60, left: 14, right: 14, background: 'rgba(101,67,33,0.85)', backdropFilter: 'blur(8px)', borderRadius: 12, padding: '12px 14px', border: '1px solid rgba(255,220,150,0.3)' }}>
-          <p style={{ margin: 0, fontSize: 12, fontWeight: 700, color: '#FFE4B5', fontFamily: 'Lora, serif' }}>Hobart, 1850</p>
-          <p style={{ margin: '4px 0 0', fontSize: 11, color: 'rgba(255,235,185,0.8)', fontFamily: 'Inter', lineHeight: 1.55 }}>The female factory operated at full capacity. Over 700 women and children lived within these walls. Horse-drawn carts delivered supplies along unpaved roads.</p>
+          <p style={{ margin: 0, fontSize: 12, fontWeight: 700, color: '#FFE4B5', fontFamily: 'Lora, serif' }}>Cascades Female Factory, 1844</p>
+          <p style={{ margin: '4px 0 0', fontSize: 11, color: 'rgba(255,235,185,0.8)', fontFamily: 'Inter', lineHeight: 1.55 }}>This is a genuine historical depiction of the Cascades Female Factory complex during its period of operation—not a filtered photograph of another building.</p>
         </div>
       )}
 
@@ -962,20 +1027,20 @@ function ARPastScreen({ onBack }: { onBack: () => void }) {
           style={{ padding: '8px 20px', borderRadius: 20, background: era === 'today' ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.2)', border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, color: era === 'today' ? C.charcoal : C.white, fontFamily: 'Inter', transition: 'all 0.3s' }}>
           Today
         </button>
-        <button onClick={() => { setEra('1850'); setSliderVal(0); }}
-          style={{ padding: '8px 20px', borderRadius: 20, background: era === '1850' ? C.burgundy : 'rgba(125,48,69,0.4)', border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, color: C.white, fontFamily: 'Inter', transition: 'all 0.3s' }}>
-          1850
+        <button onClick={() => { setEra('1844'); setSliderVal(0); }}
+          style={{ padding: '8px 20px', borderRadius: 20, background: era === '1844' ? C.burgundy : 'rgba(125,48,69,0.4)', border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, color: C.white, fontFamily: 'Inter', transition: 'all 0.3s' }}>
+          1844
         </button>
       </div>
 
       {/* Slider */}
       <div style={{ position: 'absolute', bottom: 60, left: 24, right: 24 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-          <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter' }}>1850</span>
+          <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter' }}>1844</span>
           <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter' }}>Today</span>
         </div>
         <input type="range" min="0" max="100" value={sliderVal}
-          onChange={e => { setSliderVal(+e.target.value); setEra(+e.target.value > 50 ? 'today' : '1850'); }}
+          onChange={e => { setSliderVal(+e.target.value); setEra(+e.target.value > 50 ? 'today' : '1844'); }}
           style={{ width: '100%', accentColor: C.white, cursor: 'pointer' }} />
       </div>
     </div>
@@ -1042,7 +1107,7 @@ function ARNavScreen({ onBack, onNav }: { onBack: () => void; onNav: (s: Screen)
 
   return (
     <div style={{ flex: 1, position: 'relative', overflow: 'hidden', background: '#0a0a0a' }}>
-      <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&h=1500&fit=crop&auto=format" alt="Live street camera view" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }} />
+      <img src="/images/landmarks/hobart-ar-navigation.webp" alt="Battery Point street in Hobart" fetchPriority="high" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }} />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom,rgba(0,0,0,.28),rgba(0,0,0,.03) 55%,rgba(0,0,0,.35))' }} />
 
       {/* Road/path overlay simulation */}
@@ -1188,11 +1253,11 @@ function WeatherScreen({ onBack, onNav }: { onBack: () => void; onNav: (s: Scree
 
 // ─── App root ─────────────────────────────────────────────────────────────────
 export default function App() {
-  const [screen, setScreen] = useState<Screen>('home')
+  const [screen, setScreen] = useState<Screen>('landing')
   const [selectedLandmarkId, setSelectedLandmarkId] = useState(1)
   const [likes, setLikes] = useState<Record<number, number>>({ 1: 248, 2: 196, 3: 181, 4: 143, 5: 126 })
   const [likedIds, setLikedIds] = useState<number[]>([])
-  const prevScreen = useRef<Screen>('home')
+  const prevScreen = useRef<Screen>('landing')
 
   const selectedLandmark = LANDMARKS.find(l => l.id === selectedLandmarkId) || LANDMARKS[0]
 
@@ -1224,7 +1289,7 @@ export default function App() {
   }
 
   const isFullscreen = screen === 'ar-camera' || screen === 'ar-past' || screen === 'ar-nav' || screen === 'standard-nav'
-  const showBottomNav = !isFullscreen && screen !== 'gallery'
+  const showBottomNav = (!isFullscreen || screen === 'ar-camera' || screen === 'ar-past') && screen !== 'gallery'
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', background: '#1a1612', padding: '20px 0' }}>
@@ -1242,10 +1307,11 @@ export default function App() {
 
         {/* Screen content */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', marginTop: isFullscreen ? 0 : 0 }}>
+          {screen === 'landing'    && <LandingScreen onExplore={() => goTo('home')} onAR={() => goTo('ar-camera')} />}
           {screen === 'home'       && <HomeScreen    onNav={goTo} onLandmark={selectLandmark} likes={likes} />}
           {screen === 'map'        && <MapScreen     onNav={goTo} onLandmark={selectLandmark} />}
           {screen === 'heritage'   && <HeritageScreen landmark={selectedLandmark} onBack={() => setScreen('home')} onNav={goTo} liked={likedIds.includes(selectedLandmarkId)} likeCount={likes[selectedLandmarkId]} onToggleLike={() => toggleLike(selectedLandmarkId)} />}
-          {screen === 'gallery'    && <GalleryScreen  onBack={() => setScreen('heritage')} />}
+          {screen === 'gallery'    && <GalleryScreen  onBack={() => setScreen('heritage')} landmarkId={selectedLandmarkId} />}
           {screen === 'audio'      && <AudioScreen    onBack={() => setScreen('heritage')} />}
           {screen === 'ar-intro'   && <ARIntroScreen  onBack={goBack} onStart={() => goTo('ar-camera')} />}
           {screen === 'ar-camera'  && <ARCameraScreen onExit={() => setScreen('heritage')} onPast={() => goTo('ar-past')} />}
